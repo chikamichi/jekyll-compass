@@ -27,4 +27,4 @@ module Jekyll
 end
 
 # Register our project type with compass
-::Compass::AppIntegration.register(:jekyll, 'Jekyll::Compass::CompassAppIntegration')
+Compass::AppIntegration.register(:jekyll, 'Jekyll::Compass::CompassAppIntegration')
