@@ -1,27 +1,24 @@
 
-# This file serves as the main entry point for the plugin. We simply include
-# all the various parts of the plugin so that everything just works.
+# Require external dependencies
+require 'sass/plugin'
+require 'fileutils'
+require 'compass'
+require 'compass/app_integration'
+require 'compass/installers'
+require 'compass/commands'
+require 'yaml'
 
-# Jekyll is the static site builder that we are making a plugin for.
-#
-# @see http://jekyllrb.com/
 module Jekyll
-  # Sass is a set of extensions to CSS that allows for things like mixins
-  # and variables. Compass is a library of Sass functions and code for use
-  # with your own websites.
-  #
-  # @see http://sass-lang.com/
-  # @see http://compass-style.org/
   module Compass
+
+    # plugin requires
+    autoload :CompassConfiguration, 'jekyll/compass/compass_configuration.rb'
+    autoload :CompassFile, 'jekyll/compass/compass_file.rb'
+    autoload :CompassInstaller, 'jekyll/compass/compass_installer.rb'
+    autoload :VERSION, 'jekyll/compass/version.rb'
   end
 end
 
-# Require dependencies
-require 'sass/plugin'
-require 'compass'
-require 'compass/commands'
-
-# Internal requires
-%w{compass_configuration compass_file generator compass_app_integration}.each do |f|
-  require "jekyll/compass/#{f}"
-end
+# Compass app integration for jekyll and jekyll generator
+require 'jekyll/compass/compass_app_integration.rb'
+require 'jekyll/compass/generator.rb'
