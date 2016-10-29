@@ -26,13 +26,11 @@ module Jekyll
           puts "Unable to find a valid configuration: sass_path=#{::Compass.configuration.sass_path}"
           return
         end
+        
         puts "\rGenerating Compass: #{::Compass.configuration.sass_path}" +
                  " => #{::Compass.configuration.css_path}"
 
         ::Compass::Commands::UpdateProject.new(@site.config['source'], {:project_type => :jekyll}).execute
-
-        puts
-        print "      Generating... "
         nil
       end
 

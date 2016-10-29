@@ -1,6 +1,3 @@
-require 'compass/installers'
-require 'yaml'
-
 module Jekyll
   module Compass
     #

@@ -1,6 +1,3 @@
-require 'compass/app_integration'
-require 'jekyll/compass/compass_installer'
-
 module Jekyll
   module Compass
     # Integration class to manage a new project type in Compass

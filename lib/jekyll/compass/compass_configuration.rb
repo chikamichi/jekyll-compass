@@ -1,5 +1,3 @@
-require 'yaml'
-
 module Jekyll
   module Compass
     # Abstracts Compass's configuration away from any particular process in our plugin
